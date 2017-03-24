@@ -1,0 +1,22 @@
+<script type="text/javascript">
+function handleChange(){
+	var month = document.getElementById("months").value
+	var year = document.getElementById("years").value;
+        var userName = document.getElementById("userName").value;
+	
+	
+	var xhr = new XMLHttpRequest();
+	xhr.open("post","selectUser?userName="+userName+"&month="+month+"&year="+year);
+	xhr.send();
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4 && xhr.status == 200){
+			document.getElementById("something").innerHTML = xhr.responseText;
+		} 	
+	}
+   	}
+</script>
+
+
+<div id="something">
+
+</div>
