@@ -4,44 +4,41 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-	$('.boldText').click(function(){
-	   $('.container').toggleClass("bold");
-	});
-	$('.italicText').click(function(){
-	  $('.container').toggleClass("italic");
-	});
-	$('.underlineText').click(function(){
-	  $('.container').toggleClass("underline");
-	});
-
-
-
-	});</script>
 <title>Insert title here</title>
-<style type="text/css">
-div.container {
-    width: 300px;
-    height: 100px;
-    border: 1px solid #ccc;
-    padding: 5px;
+<script>
+function setColor(btn, color){
+    var count=1;
+    var property = document.getElementById(btn);
+    if (count == 0){
+        property.style.backgroundColor = "#FFFFFF"
+        count=1;        
+    }
+    else{
+        property.style.backgroundColor = "#7FFF00"
+        count=0;
+    }
+
 }
-.bold{
-  font-weight:bold;
-}
-.italic{
-  font-style :italic;
-}
-.underline{
- text-decoration: underline;
-}</style>
+</script>
+
+<!-- <script>
+    var count = 1;
+    function setColor(btn, color) {
+        var property = document.getElementById(btn);
+        if (count == 0) {
+            property.style.backgroundColor = "#FFFFFF"
+            count = 1;        
+        }
+        else {
+            property.style.backgroundColor = "#7FFF00"
+            count = 0;
+        }
+    }
+</script> -->
+
+
 </head>
 <body>
-<div class="container" contentEditable></div><br/>
-<input type="button" class="boldText" value="Bold">
-<input type="button" class="italicText" value="Italic">
-<input type="button" class="underlineText" value="Underline">
+<input type="button" id="button" value = "button" style= "background-color:blue" onclick="setColor('button', '#101010')"/>
 </body>
 </html>
