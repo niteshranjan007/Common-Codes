@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Date Picker</title>
+  <script>
+  function validatePassword(){
+  var date1 = new Date();
+  
+  var date3 = document.getElementById("startDate").value;
+  var date2 = new Date(date3);
+ // alert(date3);
+  var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+  var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+  if(diffDays > 1095){
+	  alert("Date cannot be greater than 3 years"); 
+  }
+  }
+  </script>
+</head>
+<body>
+ 
+<p>Start Date: <input type="text" id="startDate" "></p>
+ <input type="submit" value="Submit" onclick="return validatePassword()" />
+ 
+</body>
+</html>
