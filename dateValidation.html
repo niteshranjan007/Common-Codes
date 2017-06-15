@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Date Picker</title>
+  <script>
+  function validatePassword(){
+  var currentDate = new Date(new Date().setHours(0,0,0,0)); 
+  var startDate = document.getElementById("startDate").value;
+  var endDate = document.getElementById("endDate").value;
+  var startDateFormat = new Date(startDate);
+  var endDateFormat = new Date(endDate);
+  var timeDiffStartDate = Math.abs(startDateFormat.getTime() - currentDate.getTime());
+  var diffDaysStartDate = Math.ceil(timeDiffStartDate / (1000 * 3600 * 24)); 
+  var timeDiffEndDate = Math.abs(endDateFormat.getTime() - startDateFormat.getTime());
+  var diffDaysEndDate = Math.ceil(timeDiffEndDate / (1000 * 3600 * 24)); 
+  //alert(diffDaysStartDate);
+  if(currentDate > startDateFormat ){
+	  
+	  alert("Start Date must be Current Date or Future Date");  
+  }
+  else if(diffDaysStartDate > 1095 ){
+	  alert("Start Date cannot be greater than 3 years"); 
+  }
+  else if(currentDate > endDateFormat ){
+	  
+	  alert("End Date must be Future Date than Start Date");  
+  }
+  else if(diffDaysEndDate > 365){
+	  alert("End Date cannot be greater than 365 days of Start Date"); 
+  }
+  
+ else if(endDateFormat < startDateFormat){
+	  
+	  alert("End Date isn't at least 1 day after Start Date");  
+  }
+  
+ else if(diffDaysEndDate < 1){
+	  
+	  alert("End Date isn't at least 1 day after Start Date");  
+  }
+  }
+  </script>
+</head>
+<body>
+ 
+<p>Start Date: <input type="text" id="startDate" "></p>
+<p>End Date: <input type="text" id="endDate" "></p>
+ <input type="submit" value="Submit" onclick="return validatePassword()" />
+ 
+</body>
+</html>
