@@ -1,0 +1,9 @@
+Hi,
+
+I couldnot completed the task XYZ as there was so much of work due to the errors which I faced because of TinyMce textarea.
+
+After including Tinymce Js files into the project, datepicker wasn't working properly.Once I solved that then there was
+issue with the textarea again as it was not giving the proper result after pasting word document contents.It took a lot of
+time to point out the exact solution for that and once it was solved then again the setContent to textarea started giving error.
+
+But finally, I was able to solve all these errors but couldn't got time to look into XYZ.So, I will look into this tomorrow.
